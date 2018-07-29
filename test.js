@@ -1,10 +1,9 @@
-function getAverage (a,b,c,d,e,f){
+var a = 6;
+var b = 5;
 
-    var average = (a + b + c + d + e + f)/6;
-    console.log(average);
-    return average;
+//double negative
+if (!isNaN(a)) {
+
+    console.log("meaning of life is " + (a*b));
 
 }
-
-var myResult = getAverage(7,8,9,10,11,12);
-console.log("the average is " + myResult);
