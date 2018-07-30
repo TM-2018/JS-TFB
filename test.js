@@ -1,27 +1,23 @@
-function setUpEvents(){
+var colourChanger = document.getElementById("colour-changer");
+var colours = ["red", "blue", "green", "pink"];
+var counter = 0;
 
-    var content = document.getElementById("content");
-    var button = document.getElementById("show-more");
+function changeColour(){
 
-    button.onclick = function(){
+if (counter >= colours.length){
+    counter = 0;
+}
 
-    if(content.className == "open"){
-        //shrink the box
-        content.className = "";
-        button.innerHTML = "Show more";
-
-    } else {
-        //expand the box
-        content.className = "open";
-        button.innerHTML = "Show less";
-    }
-
-};
+colourChanger.style.background = colours[counter];
+counter++;
 
 }
 
-window.onload = function(){
+var myTimer = setInterval(changeColour, 3000);
 
-    setUpEvents();
+colourChanger.onclick = function(){
 
-};
+    clearInterval(myTimer);
+    colourChanger.innerHTML = "Timer stopped";
+
+}
